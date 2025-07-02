@@ -168,13 +168,25 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: var(--card-background);
+            padding: 2rem;
             border-radius: 15px;
-            padding: 25px;
-            color: white;
+            box-shadow: var(--card-shadow);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            max-width: 350px;
+            margin: 1rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
         .service-icon {
@@ -391,11 +403,54 @@
                 padding: 20px;
             }
         }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
     <div class="floating-hearts" id="hearts"></div>
     
+    <div class="header">
+        <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
+        <nav class="nav-menu">
+            <a href="#services" class="nav-link">サービス</a>
+            <a href="#about" class="nav-link">当店について</a>
+            <a href="#contact" class="nav-link">お問い合わせ</a>
+        </nav>
+    </div>
     <div class="container">
         <div class="hero">
             <div class="hero-video">
@@ -418,16 +473,16 @@
             <h2 class="section-title"><span class="sparkle">✨</span>訪問美容メニュー<span class="sparkle">✨</span></h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">💆‍♀️</div>
-                    <div class="service-name">ヘッドマッサージ</div>
-                    <div class="service-description">リラックス効果抜群</div>
+                    <img src="images/service-massage.jpg" alt="ヘッドマッサージ" class="service-image">
+                    <h3>ヘッドマッサージ</h3>
+                    <p>頭と首のコリをほぐし、リラックス効果抜群です。</p>
                     <div class="service-price">¥3,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">💆</div>
-                    <div class="service-name">フェイシャルエステ</div>
-                    <div class="service-description">パック付き</div>
+                    <img src="images/service-facial.jpg" alt="フェイシャルエステ" class="service-image">
+                    <h3>フェイシャルエステ</h3>
+                    <p>特別な技術でお肌のハリとツヤを蘇らせます。</p>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
