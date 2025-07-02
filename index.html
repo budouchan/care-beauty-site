@@ -411,32 +411,90 @@
             width: 100%;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 1rem;
         }
 
         .logo-img {
-            height: 60px;
+            height: 100px;
             width: auto;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 0.5rem 0 0.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .site-subtitle {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin: 0 0 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .nav-menu {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .nav-link {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
         .nav-link:hover {
-            color: var(--accent-color);
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: var(--secondary-color);
         }
     </style>
 </head>
@@ -444,7 +502,11 @@
     <div class="floating-hearts" id="hearts"></div>
     
     <div class="header">
-        <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
+            <h1 class="site-title">CARE BEAUTY</h1>
+            <p class="site-subtitle">〜美と健康をお届けする訪問美容サービス〜</p>
+        </div>
         <nav class="nav-menu">
             <a href="#services" class="nav-link">サービス</a>
             <a href="#about" class="nav-link">当店について</a>
@@ -453,19 +515,9 @@
     </div>
     <div class="container">
         <div class="hero">
-            <div class="hero-video">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/1094350328?h=14f8f828cd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="20250618_1546_Gentle Nail Care_simple_compose_01jy0wmjsxe9wswgbs2hcg82rs"></iframe>
-                </div>
-            </div>
-            
-            <div class="hero-content">
-                <div class="logo">
-                    <div class="logo-text">CARE BEAUTY</div>
-                </div>
-                <h1><span class="sparkle">✨</span> CARE BEAUTY <span class="sparkle">✨</span></h1>
-                <p>美しさを、生きる力に</p>
-                <p>あなたのもとへ美しさをお届けする訪問美容サービス</p>
+            <h2>美と健康をあなたの元へ</h2>
+            <p>プロの技術と心のこもったサービスで、特別なひとときをお届けします。</p>
+            <a href="#contact" class="cta-button">ご予約はこちら</a>
             </div>
         </div>
 
