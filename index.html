@@ -12,9 +12,9 @@
         }
 
         :root {
-            --primary-color: #807A66;  /* メインカラー */
-            --secondary-color: #B8A582; /* セカンダリーカラー */
-            --accent-color: #FFD700;    /* アクセントカラー */
+            --primary-color: #807A66;
+            --secondary-color: #B8A582;
+            --accent-color: #FFD700;
             --background-gradient: linear-gradient(135deg, #F5F0E8 0%, #E8DCC0 50%, #D4C4A0 100%);
             --card-background: rgba(255, 255, 255, 0.95);
             --card-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -50,6 +50,7 @@
             height: 400px;
             background: rgba(0,0,0,0.2);
             overflow: hidden;
+            margin-bottom: 30px;
         }
 
         .hero-video div {
@@ -62,25 +63,9 @@
             height: 100%;
             border: none;
             background: transparent;
-            /* テキストとコントロールを非表示にする */
             filter: brightness(1.1) contrast(1.1);
         }
-        
-        /* Vimeoのテキストとコントロールを非表示 */
-        .vp-paused .vp-controls,
-        .vp-paused .vp-caption,
-        .vp-paused .vp-title,
-        .vp-paused .vp-description,
-        .vp-paused .vp-branding,
-        .vp-paused .vp-badge,
-        .vp-paused .vp-controls-holder,
-        .vp-paused .vp-bottom {
-            display: none !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-        }
 
-        /* モバイル対応 */
         @media screen and (max-width: 768px) {
             .hero-video {
                 height: 300px;
@@ -90,7 +75,7 @@
                 padding: 10px;
             }
             
-            .service-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -102,17 +87,6 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            color: white;
-        }
-
-        .hero h1 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .logo {
@@ -418,7 +392,7 @@
             }
         }
     </style>
-
+</head>
 <body>
     <div class="floating-hearts" id="hearts"></div>
     
@@ -427,6 +401,9 @@
             <div class="hero-video">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <iframe src="https://player.vimeo.com/video/1094350328?h=14f8f828cd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="20250618_1546_Gentle Nail Care_simple_compose_01jy0wmjsxe9wswgbs2hcg82rs"></iframe>
+                </div>
+            </div>
+            
             <div class="hero-content">
                 <div class="logo">
                     <div class="logo-text">CARE BEAUTY</div>
@@ -441,54 +418,42 @@
             <h2 class="section-title"><span class="sparkle">✨</span>訪問美容メニュー<span class="sparkle">✨</span></h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        💆‍♀️
-                    </div>
+                    <div class="service-icon">💆‍♀️</div>
                     <div class="service-name">ヘッドマッサージ</div>
                     <div class="service-description">リラックス効果抜群</div>
                     <div class="service-price">¥3,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        💆
-                    </div>
+                    <div class="service-icon">💆</div>
                     <div class="service-name">フェイシャルエステ</div>
                     <div class="service-description">パック付き</div>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        ✋
-                    </div>
+                    <div class="service-icon">✋</div>
                     <div class="service-name">リンパドレナージュ</div>
                     <div class="service-description">肩～指先・太もも～足先</div>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        💅
-                    </div>
+                    <div class="service-icon">💅</div>
                     <div class="service-name">ハンドネイル</div>
                     <div class="service-description">爪切り＋ハンドケア付き</div>
                     <div class="service-price">¥5,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        👣
-                    </div>
+                    <div class="service-icon">👣</div>
                     <div class="service-name">フットネイル</div>
                     <div class="service-description">爪切り＋フットバス＋フットケア付き<br>※巻き爪ケア +¥1,000</div>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">
-                        💄
-                    </div>
+                    <div class="service-icon">💄</div>
                     <div class="service-name">フルメイク</div>
                     <div class="service-description">記念写真付き</div>
                     <div class="service-price">¥8,000</div>
