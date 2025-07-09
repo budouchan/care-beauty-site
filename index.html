@@ -694,21 +694,42 @@
 
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px;
+                height: 60px;
             }
             
-            .contact-info {
+            .header-left {
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1001;
+                height: 60px;
+            }
+            
+            .header-right {
                 display: none;
             }
             
+            .logo-img {
+                height: 35px;
+            }
+            
+            .site-title {
+                font-size: 1.1rem;
+            }
+            
+            .site-subtitle {
+                font-size: 0.7rem;
+            }
+            
             .nav-menu {
-                position: static;
-                transform: none;
-                margin-top: 8px;
+                position: fixed;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
                 gap: 12px;
                 padding: 8px 16px;
+                z-index: 1000;
             }
             
             .nav-link {
@@ -717,11 +738,12 @@
             }
             
             .hero {
-                padding: 140px 0 60px;
+                padding: 120px 0 60px;
+                margin-top: 60px;
             }
             
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .service-types {
@@ -751,15 +773,31 @@
             top: 0;
             left: 0;
             width: 100%;
+            height: 80px;
+            display: flex;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-left {
+            position: relative;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
             padding: 1rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.05);
+        }
+
+        .header-right {
+            flex: 1;
+            background: linear-gradient(135deg, #A8D5E5 0%, #7BC4D8 100%);
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            color: white;
         }
 
         .logo-container {
@@ -805,35 +843,51 @@
 
         .contact-info {
             display: flex;
-            align-items: center;
-            gap: 20px;
-            opacity: 1;
-            transition: opacity 0.3s ease;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
         }
 
-        .contact-info.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .contact-phone {
+        .phone-section {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .business-hours {
             font-size: 0.9rem;
-            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .hours-line {
+            display: flex;
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
             text-decoration: none;
-            padding: 8px 16px;
+            font-size: 0.9rem;
+            padding: 6px 12px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        .contact-phone:hover {
-            background: var(--primary-color);
-            color: white;
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
 
@@ -924,18 +978,46 @@
     <div class="floating-hearts" id="hearts"></div>
     
     <div class="header">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
-            <div>
-                <h1 class="site-title">CARE BEAUTY</h1>
-                <p class="site-subtitle">〜美と健康をお届けする訪問美容サービス〜</p>
+        <div class="header-left">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
+                <div>
+                    <h1 class="site-title">CARE BEAUTY</h1>
+                    <p class="site-subtitle">〜美と健康をお届けする訪問美容サービス〜</p>
+                </div>
             </div>
         </div>
-        <div class="contact-info">
-            <a href="tel:090-1234-5678" class="contact-phone">
-                <span>📞</span>
-                <span>090-1234-5678</span>
-            </a>
+        <div class="header-right">
+            <div class="contact-info">
+                <div class="phone-section">
+                    <span>📱</span>
+                    <span>080-1843-6375</span>
+                </div>
+                <div class="business-hours">
+                    <div class="hours-line">
+                        <span>営業時間</span>
+                        <span>月曜日〜日曜日 9:00〜20:00</span>
+                    </div>
+                    <div class="hours-line">
+                        <span>定休日</span>
+                        <span>不定休、要事前予約</span>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <span>📺</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link">
+                    <span>💬</span>
+                    <span>LINE</span>
+                </a>
+                <a href="#contact" class="social-link">
+                    <span>✉️</span>
+                    <span>Contact</span>
+                </a>
+            </div>
         </div>
     </div>
     
@@ -1128,13 +1210,13 @@
         document.querySelectorAll('.services-section, .sets-section, .campaign-section, .area-section')
             .forEach(el => observer.observe(el));
 
-        // スクロール時のヘッダー電話番号フェードアウト
+        // スクロール時のヘッダーエフェクト
         window.addEventListener('scroll', () => {
-            const contactInfo = document.querySelector('.contact-info');
+            const headerRight = document.querySelector('.header-right');
             if (window.scrollY > 100) {
-                contactInfo.classList.add('hidden');
+                headerRight.style.opacity = '0.8';
             } else {
-                contactInfo.classList.remove('hidden');
+                headerRight.style.opacity = '1';
             }
         });
     </script>
