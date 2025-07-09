@@ -252,25 +252,48 @@
             letter-spacing: 1px;
         }
 
-        .service-types {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
 
-        .service-type-card {
+        .service-card {
             background: var(--card-background);
             padding: 30px;
             border-radius: 15px;
             box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        .service-type-card h3 {
-            font-size: 1.5rem;
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-name {
+            font-size: 1.3rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
-            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .service-description {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
         }
 
         .service-content h4 {
@@ -396,12 +419,48 @@
             text-align: right;
         }
 
-        .pricing-section {
+        .sets-section {
             background: linear-gradient(135deg, #E8DCC0 0%, #F5F0E8 100%);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .set-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .set-card:hover {
+            transform: scale(1.02);
+        }
+
+        .set-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .set-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .discounted-price {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .pricing-info {
@@ -746,7 +805,7 @@
                 font-size: 2.2rem;
             }
             
-            .service-types {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1074,68 +1133,96 @@
         </section>
 
         <div class="services-section">
-            <h2 class="section-title"><span class="sparkle">✨</span>サービス内容<span class="sparkle">✨</span></h2>
-            <div class="service-types">
-                <div class="service-type-card">
-                    <h3>🏢 施設訪問サービス</h3>
-                    <div class="service-content">
-                        <h4>グループレクリエーション</h4>
-                        <ul>
-                            <li>集団での美容体験</li>
-                            <li>楽しい時間を共有</li>
-                            <li>コミュニケーション促進</li>
-                        </ul>
-                        <h4>個人美容サービス</h4>
-                        <ul>
-                            <li>ネイルケア</li>
-                            <li>メイクアップ</li>
-                            <li>ハンド・フットケア</li>
-                            <li>フェイシャルケア</li>
-                            <li>ヘッドマッサージ</li>
-                        </ul>
-                    </div>
+            <h2 class="section-title"><span class="sparkle">✨</span>訪問美容メニュー<span class="sparkle">✨</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💆‍♀️</div>
+                    <h3 class="service-name">ヘッドマッサージ</h3>
+                    <p class="service-description">リラックス効果抜群</p>
+                    <div class="service-price">¥3,000</div>
                 </div>
-                <div class="service-type-card">
-                    <h3>🏠 訪問サービス</h3>
-                    <div class="service-content">
-                        <h4>お祝い美容パッケージ</h4>
-                        <ul>
-                            <li>特別な日のための美容サービス</li>
-                            <li>記念日やイベントに対応</li>
-                            <li>写真撮影サービス付き</li>
-                        </ul>
-                        <h4>個人向けサービス</h4>
-                        <ul>
-                            <li>ご自宅での美容サービス</li>
-                            <li>ご家族との時間を大切に</li>
-                            <li>プライベートな空間での施術</li>
-                        </ul>
-                    </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-name">フェイシャルエステ</h3>
+                    <p class="service-description">パック付き</p>
+                    <div class="service-price">¥7,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">👋</div>
+                    <h3 class="service-name">リンパドレナージュ</h3>
+                    <p class="service-description">肩～指先・太もも～足先</p>
+                    <div class="service-price">¥7,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <h3 class="service-name">ハンドネイル</h3>
+                    <p class="service-description">爪切り＋ハンドケア付き</p>
+                    <div class="service-price">¥5,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">👣</div>
+                    <h3 class="service-name">フットネイル</h3>
+                    <p class="service-description">爪切り＋フットバス＋フットケア付き<br><small>※巻き爪ケアは +¥1,000</small></p>
+                    <div class="service-price">¥7,000</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <h3 class="service-name">フルメイク</h3>
+                    <p class="service-description">記念写真付き</p>
+                    <div class="service-price">¥8,000</div>
                 </div>
             </div>
         </div>
 
-        <div class="pricing-section">
-            <h2 class="section-title">💰料金について</h2>
-            <div class="pricing-info">
-                <div class="pricing-card">
-                    <h3>体験料金</h3>
-                    <div class="price">¥3,000〜</div>
-                    <p>初回限定価格<br>まずはお気軽にお試しください</p>
-                </div>
-                <div class="pricing-card">
-                    <h3>標準料金</h3>
-                    <div class="price">¥5,000〜¥15,000</div>
-                    <p>サービス内容により変動<br>詳しくはお問い合わせください</p>
+        <div class="sets-section">
+            <h2 class="section-title">💎お得なセットメニュー💎</h2>
+            
+            <div class="set-card">
+                <div class="set-title">フェイシャルエステ＋ヘッドマッサージ</div>
+                <div class="set-price">
+                    <span class="original-price">¥10,000</span>
+                    <span>→</span>
+                    <span class="discounted-price">¥8,500</span>
                 </div>
             </div>
-            <div class="payment-methods">
-                <h3>お支払い方法</h3>
-                <div class="payment-list">
-                    <div class="payment-item">💳 銀行振込</div>
-                    <div class="payment-item">💰 現金払い</div>
+            
+            <div class="set-card">
+                <div class="set-title">フェイシャルエステ＋リンパドレナージュ</div>
+                <div class="set-price">
+                    <span class="original-price">¥14,000</span>
+                    <span>→</span>
+                    <span class="discounted-price">¥12,500</span>
                 </div>
             </div>
+            
+            <div class="set-card">
+                <div class="set-title">フェイシャルエステ＋フルメイク</div>
+                <div class="set-price">
+                    <span class="original-price">¥15,000</span>
+                    <span>→</span>
+                    <span class="discounted-price">¥13,500</span>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1.2rem; color: #333;">その他、お客様のご要望に応じて</p>
+                <p style="font-size: 1.4rem; font-weight: bold; color: #e74c3c; margin-top: 10px;">
+                    <strong>"あなただけの特別セット"</strong>もご提案いたします！
+                </p>
+            </div>
+        </div>
+
+        <div class="campaign-section">
+            <h2 class="campaign-title">🎉初回限定キャンペーン🎉</h2>
+            <div class="campaign-highlight">💖 すべてのメニューが半額！！ 💖</div>
+            <p style="font-size: 1.2rem; color: #333; position: relative; z-index: 1;">
+                はじめての方はぜひこの機会にご体験ください！
+            </p>
         </div>
 
         <div class="campaign-section">
