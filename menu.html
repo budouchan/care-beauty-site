@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>CARE BEAUTY - 訪問美容・介護美容サービス</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8D7B68;
+            --secondary-color: #C3B091;
+            --accent-color: #A4907C;
+            --background-color: #FCFBF8;
+            --text-color: #3D3D3D;
+            --card-background: #FFFFFF;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            --soft-accent: #EAE0D5; /* ★追加：柔らかなアクセントカラー */
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease-out;
+            overflow: hidden; /* ★追加 */
+        }
+
+        .hero::before { /* ★::before疑似要素を追加して画像を管理 */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('images/S__92930108_0.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: kenburns 20s ease-out infinite; /* ★アニメーションを追加 */
+            z-index: -1;
+        }
+
+        /* ケン・バーンズエフェクトのキーフレーム */
+        @keyframes kenburns {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .hero h2 {
+                font-size: 4rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .section {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 80px 40px; /* 変更：上下の余白を広げる */
+            margin-bottom: 50px;
+            box-shadow: var(--card-shadow);
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-background);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            padding: 25px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            min-height: 50px;
+        }
+
+        .service-price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .about-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--secondary-color);
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .about-image {
+                margin: 0;
+            }
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .testimonial-card {
+            background: var(--soft-accent); /* 変更 */
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info .tel {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.03); /* ★scaleを追加して少し拡大 */
+            box-shadow: 0 12px 25px rgba(141, 123, 104, 0.25); /* ★影の色をテーマに合わせる */
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.97);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .site-title-header {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            .nav-menu {
+                gap: 1rem;
+            }
+            .nav-link {
+                font-size: 0.9rem;
+            }
+            .hero {
+                padding-top: 150px;
+            }
+        }
+
+        /* ローディング画面のスタイル */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-logo {
+            width: 120px;
+            animation: fadeInOut 2s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+
+        /* ローディング完了後の非表示スタイル */
+        #loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="loader-logo">
+    </div>
+    <div class="header">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="CARE BEAUTY ロゴ" class="logo-img">
+            <span class="site-title-header">CARE BEAUTY</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#services" class="nav-link">サービス</a>
+            <a href="#about" class="nav-link">当店について</a>
+            <a href="#testimonials" class="nav-link">お客様の声</a>
+            <a href="#faq" class="nav-link">よくあるご質問</a>
+            <a href="#contact" class="nav-link">お問い合わせ</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h2>心に寄り添う、<br>美の時間をあなたへ</h2>
+            <p>訪問美容・介護美容の専門家が、ご自宅や施設へ伺い、<br>清潔感と彩りのある毎日をサポートします。</p>
+            <a href="#contact" class="cta-button">ご予約・ご相談はこちら</a>
+        </div>
+
+        <div id="services" class="section">
+            <h2 class="section-title">サービス内容</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/service-facial.jpg" alt="フェイシャルエステ" class="service-image">
+                    <h3>フェイシャルエステ</h3>
+                    <p>肌質に合わせたオーガニック化粧品を使用し、ハリと潤いを与えます。</p>
+                    <div class="service-price">¥7,000</div>
+                </div>
+                <div class="service-card">
+                    <img src="images/service-massage.jpg" alt="ヘッドマッサージ" class="service-image">
+                    <h3>リラクゼーション</h3>
+                    <p>頭、首、肩のコリを優しくほぐし、心身の緊張を和らげます。</p>
+                    <div class="service-price">¥3,000</div>
+                </div>
+                <div class="service-card">
+                    <h3>ネイルケア</h3>
+                    <p>爪のカット、甘皮処理、保湿ケアで、清潔で美しい手元・足元に。</p>
+                    <div class="service-price">¥5,000</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about" class="section">
+            <h2 class="section-title">当店について</h2>
+            <div class="about-content">
+                <img src="images/S__92930110_0.jpg" alt="代表者の写真" class="about-image">
+                <div class="about-text">
+                    <h3>心を込めたケアで、毎日を豊かに</h3>
+                    <p>
+                        はじめまして。「CARE BEAUTY」代表の〇〇です。<br>
+                        長年の美容師経験と、介護施設でのボランティア経験から、年齢や場所に捉われず「きれいになる喜び」を感じていただきたいという想いで、このサービスを始めました。<br>
+                        お一人おひとりの心と身体に寄り添い、ただ髪を整えるだけでなく、心からリラックスできる温かい時間をお届けすることをお約束します。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="testimonials" class="section">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">“施設での生活に彩りが生まれました。丁寧な施術と優しい会話に、心も和みます。”</p>
+                <p class="testimonial-author">（80代・女性 / 介護施設にて）</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">“寝たきりの母が、とても晴れやかな顔になりました。衛生管理もしっかりしていて安心です。”</p>
+                <p class="testimonial-author">（50代・男性 / ご自宅にて）</p>
+            </div>
+        </div>
+
+        <div id="faq" class="section">
+            <h2 class="section-title">よくあるご質問</h2>
+            <div class="faq-item">
+                <p class="faq-question">Q. 施設や病院にも来てもらえますか？</p>
+                <p>A. はい、可能です。事前に施設や病院の許可をいただいた上で、ご指定の場所へ伺います。</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q. 車椅子やベッドの上でも施術は可能ですか？</p>
+                <p>A. はい、問題ございません。お客様の体調や状況に合わせて、安全に配慮しながら施術いたします。</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q. 準備するものはありますか？</p>
+                <p>A. 基本的に必要なものはすべて持参いたします。施術内容によっては、お湯やお借りするスペースについてご相談させていただく場合がございます。</p>
+            </div>
+        </div>
+
+        <div id="contact" class="contact-section">
+            <h2 class="section-title">お問い合わせ・ご予約</h2>
+            <div class="contact-info">
+                <p>お電話またはお問い合わせフォームより、お気軽にご連絡ください。</p>
+                <p class="tel">☎ 090-1234-5678</p>
+                <p>（受付時間：平日 9:00〜18:00）</p>
+            </div>
+            <a href="#" class="cta-button" style="margin-top: 30px;" onclick="alert('お問い合わせフォームへ遷移します（仮）')">お問い合わせフォーム</a>
+        </div>
+    </div>
+
+    <script>
+        // ローディング画面の制御
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            // 最低1.5秒は表示させる
+            setTimeout(function() {
+                loader.classList.add('loaded');
+            }, 1500); 
+        });
+
+        // スクロール時のアニメーション
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

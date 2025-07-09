@@ -168,6 +168,78 @@
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
+        .flow-section {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            animation: fadeInUp 1s ease-out 0.1s both;
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .hours {
+            color: #666;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -176,15 +248,50 @@
             font-weight: bold;
         }
 
-        .services-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-            padding: 0 1rem;
+        .service-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-type-card {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .service-type-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-content h4 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+
+        .service-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-content li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
         @media (min-width: 768px) {
@@ -285,12 +392,69 @@
             text-align: right;
         }
 
-        .sets-section {
+        .pricing-section {
             background: linear-gradient(135deg, #E8DCC0 0%, #F5F0E8 100%);
             border-radius: 20px;
             padding: 40px;
             margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .pricing-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .payment-methods {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .payment-methods h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .payment-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .payment-item {
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 25px;
+            font-weight: 500;
         }
 
         .set-card {
@@ -379,6 +543,63 @@
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
+        }
+
+        .contact-section {
+            background: var(--card-background);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .contact-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-detail {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            padding: 10px 20px;
+            color: white;
+            border-radius: 25px;
+            font-weight: 500;
+        }
+
+        .facebook {
+            background: #4267B2;
+        }
+
+        .line {
+            background: #00C300;
         }
 
         .area-section {
@@ -472,8 +693,26 @@
                 font-size: 2.5rem;
             }
             
-            .services-grid {
+            .service-types {
                 grid-template-columns: 1fr;
+            }
+            
+            .flow-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-list {
+                flex-direction: column;
+                align-items: center;
             }
             
             .container {
@@ -638,92 +877,104 @@
         <div class="hero">
             <h2>美と健康をあなたの元へ</h2>
             <p>プロの技術と心のこもったサービスで、特別なひとときをお届けします。</p>
+            <div class="contact-info">
+                <div class="phone-number">📞 090-1234-5678</div>
+                <div class="hours">営業時間: 9:00-20:00（年中無休）</div>
+            </div>
             <a href="#contact" class="cta-button">ご予約はこちら</a>
             </div>
         </div>
 
+        <section id="flow" class="flow-section">
+            <div class="container">
+                <h2 class="section-title">サービスの流れ</h2>
+                <div class="flow-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">お問い合わせ・相談</h3>
+                        <p class="step-description">お電話またはメールでご相談ください。ご要望やご質問をお聞かせください。お客様の状況やご希望に合わせて最適なサービスをご提案いたします。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">体験・お試し</h3>
+                        <p class="step-description">実際のサービスを体験していただき、ご満足いただけるか確認していただきます。初回限定の特別価格でお試しいただけます。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">施術・サービス提供</h3>
+                        <p class="step-description">プロのスタッフが丁寧に美容サービスを提供いたします。お客様の体調や気分に合わせて、最適な施術を行います。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">報告・フォロー</h3>
+                        <p class="step-description">サービス後の状況をご報告し、継続的なサポートをいたします。次回のご予約や気になることがございましたらお気軽にご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="services-section">
-            <h2 class="section-title"><span class="sparkle">✨</span>訪問美容メニュー<span class="sparkle">✨</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="images/service-massage.jpg" alt="ヘッドマッサージ" class="service-image">
-                    <h3>ヘッドマッサージ</h3>
-                    <p>頭と首のコリをほぐし、リラックス効果抜群です。</p>
-                    <div class="service-price">¥3,000</div>
+            <h2 class="section-title"><span class="sparkle">✨</span>サービス内容<span class="sparkle">✨</span></h2>
+            <div class="service-types">
+                <div class="service-type-card">
+                    <h3>🏢 施設訪問サービス</h3>
+                    <div class="service-content">
+                        <h4>グループレクリエーション</h4>
+                        <ul>
+                            <li>集団での美容体験</li>
+                            <li>楽しい時間を共有</li>
+                            <li>コミュニケーション促進</li>
+                        </ul>
+                        <h4>個人美容サービス</h4>
+                        <ul>
+                            <li>ネイルケア</li>
+                            <li>メイクアップ</li>
+                            <li>ハンド・フットケア</li>
+                            <li>フェイシャルケア</li>
+                            <li>ヘッドマッサージ</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="service-card">
-                    <img src="images/service-facial.jpg" alt="フェイシャルエステ" class="service-image">
-                    <h3>フェイシャルエステ</h3>
-                    <p>特別な技術でお肌のハリとツヤを蘇らせます。</p>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">✋</div>
-                    <div class="service-name">リンパドレナージュ</div>
-                    <div class="service-description">肩～指先・太もも～足先</div>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💅</div>
-                    <div class="service-name">ハンドネイル</div>
-                    <div class="service-description">爪切り＋ハンドケア付き</div>
-                    <div class="service-price">¥5,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">👣</div>
-                    <div class="service-name">フットネイル</div>
-                    <div class="service-description">爪切り＋フットバス＋フットケア付き<br>※巻き爪ケア +¥1,000</div>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💄</div>
-                    <div class="service-name">フルメイク</div>
-                    <div class="service-description">記念写真付き</div>
-                    <div class="service-price">¥8,000</div>
+                <div class="service-type-card">
+                    <h3>🏠 訪問サービス</h3>
+                    <div class="service-content">
+                        <h4>お祝い美容パッケージ</h4>
+                        <ul>
+                            <li>特別な日のための美容サービス</li>
+                            <li>記念日やイベントに対応</li>
+                            <li>写真撮影サービス付き</li>
+                        </ul>
+                        <h4>個人向けサービス</h4>
+                        <ul>
+                            <li>ご自宅での美容サービス</li>
+                            <li>ご家族との時間を大切に</li>
+                            <li>プライベートな空間での施術</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="sets-section">
-            <h2 class="section-title">💎お得なセットメニュー💎</h2>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋ヘッドマッサージ</div>
-                <div class="set-price">
-                    <span class="original-price">¥10,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥8,500</span>
+        <div class="pricing-section">
+            <h2 class="section-title">💰料金について</h2>
+            <div class="pricing-info">
+                <div class="pricing-card">
+                    <h3>体験料金</h3>
+                    <div class="price">¥3,000〜</div>
+                    <p>初回限定価格<br>まずはお気軽にお試しください</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>標準料金</h3>
+                    <div class="price">¥5,000〜¥15,000</div>
+                    <p>サービス内容により変動<br>詳しくはお問い合わせください</p>
                 </div>
             </div>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋リンパドレナージュ</div>
-                <div class="set-price">
-                    <span class="original-price">¥14,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥12,500</span>
+            <div class="payment-methods">
+                <h3>お支払い方法</h3>
+                <div class="payment-list">
+                    <div class="payment-item">💳 銀行振込</div>
+                    <div class="payment-item">💰 現金払い</div>
                 </div>
-            </div>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋フルメイク</div>
-                <div class="set-price">
-                    <span class="original-price">¥15,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥13,500</span>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.2rem; color: #333;">その他、お客様のご要望に応じて</p>
-                <p style="font-size: 1.4rem; font-weight: bold; color: #e74c3c; margin-top: 10px;">
-                    <strong>"あなただけの特別セット"</strong>もご提案いたします！
-                </p>
             </div>
         </div>
 
@@ -733,6 +984,30 @@
             <p style="font-size: 1.2rem; color: #333; position: relative; z-index: 1;">
                 はじめての方はぜひこの機会にご体験ください！
             </p>
+        </div>
+
+        <div class="contact-section">
+            <h2 class="section-title">📞お問い合わせ</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <h3>📞 電話でのお問い合わせ</h3>
+                    <div class="contact-detail">090-1234-5678</div>
+                    <p>営業時間: 9:00-20:00（年中無休）<br>お気軽にお電話ください</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 メールでのお問い合わせ</h3>
+                    <div class="contact-detail">info@kaigobiyou.net</div>
+                    <p>24時間受付<br>2営業日以内にご返信いたします</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 SNSでのお問い合わせ</h3>
+                    <p style="margin-bottom: 15px;">Facebook / LINE でもお気軽にご連絡ください</p>
+                    <div class="social-links">
+                        <span class="social-link facebook">Facebook</span>
+                        <span class="social-link line">LINE</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="area-section">
