@@ -282,16 +282,22 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: 15px;
-            height: 80px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 10px;
         }
 
         .service-icon img {
-            width: 60px;
-            height: 60px;
+            max-width: 120px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
             object-fit: contain;
+            border-radius: 8px;
         }
 
         .fallback-icon {
@@ -1183,28 +1189,40 @@
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">👋</div>
+                    <div class="service-icon">
+                        <img src="images/illustrations/lymphatic-drainage.png" alt="リンパドレナージュ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <div class="fallback-icon" style="display: none;">👋</div>
+                    </div>
                     <h3 class="service-name">リンパドレナージュ</h3>
                     <p class="service-description">肩～指先・太もも～足先</p>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">💅</div>
+                    <div class="service-icon">
+                        <img src="images/illustrations/hand-nail.png" alt="ハンドネイル" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <div class="fallback-icon" style="display: none;">💅</div>
+                    </div>
                     <h3 class="service-name">ハンドネイル</h3>
                     <p class="service-description">爪切り＋ハンドケア付き</p>
                     <div class="service-price">¥5,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">👣</div>
+                    <div class="service-icon">
+                        <img src="images/illustrations/foot-nail.png" alt="フットネイル" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <div class="fallback-icon" style="display: none;">👣</div>
+                    </div>
                     <h3 class="service-name">フットネイル</h3>
                     <p class="service-description">爪切り＋フットバス＋フットケア付き<br><small>※巻き爪ケアは +¥1,000</small></p>
                     <div class="service-price">¥7,000</div>
                 </div>
                 
                 <div class="service-card">
-                    <div class="service-icon">💄</div>
+                    <div class="service-icon">
+                        <img src="images/illustrations/full-makeup.png" alt="フルメイク" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                        <div class="fallback-icon" style="display: none;">💄</div>
+                    </div>
                     <h3 class="service-name">フルメイク</h3>
                     <p class="service-description">記念写真付き</p>
                     <div class="service-price">¥8,000</div>
