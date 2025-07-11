@@ -2,8 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>CARE BEAUTY - 訪問美容サービス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やさしさを届ける、訪問美容 | 姫路の介護美容サービス</title>
+    <meta name="description" content="兵庫県姫路市の訪問美容サービス。3人の子どもを育てながら、美容を届ける道へ。2026年春サービス開始予定。介護美容、ヘッドスパ、フェイシャル、ネイル、リンパケアなど。">
+    <meta name="keywords" content="介護美容,姫路,訪問美容,ヘッドスパ,フェイシャル,ネイル,リンパケア,メイク,高齢者,妊産婦,育児中,美容">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
@@ -15,13 +17,14 @@
         }
 
         :root {
-            --primary-color: #A0956B;
-            --secondary-color: #C4B896;
-            --accent-color: #D4AF37;
-            --background-gradient: linear-gradient(135deg, #FDFCF8 0%, #F4F0E8 50%, #EDE7DA 100%);
-            --card-background: rgba(255, 255, 255, 0.98);
-            --card-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            --primary-color: #E8C5A0;
+            --secondary-color: #F5E6D3;
+            --accent-color: #B8860B;
             --text-color: #5A5A5A;
+            --text-light: #777;
+            --background-gradient: linear-gradient(135deg, #FDFCF8 0%, #F8F4E8 50%, #F0EAD8 100%);
+            --card-background: rgba(255, 255, 255, 0.9);
+            --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         body {
@@ -36,262 +39,120 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        .hero {
-            text-align: center;
-            padding: 120px 0 60px;
-            position: relative;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            animation: fadeInUp 1s ease-out;
-            overflow: hidden;
+        header {
+            background: var(--card-background);
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .hero-video {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: rgba(0,0,0,0.2);
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .hero-video div {
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-video iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: transparent;
-            filter: brightness(1.1) contrast(1.1);
-        }
-
-        @media screen and (max-width: 768px) {
-            .hero-video {
-                height: 300px;
-            }
-            
-            .container {
-                padding: 10px;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .set-card {
-                margin: 10px 0;
-            }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
         .logo {
-            width: 100%;
-            margin: 0 auto 30px;
-            text-align: center;
-            animation: logoFloat 3s ease-in-out infinite;
+            font-family: 'Klee One', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
-        .logo-text {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #807A66;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero-message-container {
+        nav ul {
             display: flex;
-            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255,255,255,0.8) 100%);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Klee One', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-light);
             margin-bottom: 2rem;
         }
-        
-        .hero-message-img {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-message-img {
-                max-width: 300px;
-            }
-        }
 
-        @media (min-width: 768px) {
-            .hero h2 {
-                font-size: 3rem;
-                margin: 0 0 1.5rem;
-            }
-        }
-
-        .hero p {
-            font-size: 1rem;
-            color: var(--primary-color);
-            max-width: 700px;
-            margin: 0 1rem 2rem;
-            line-height: 1.6;
-        }
-
-        @media (min-width: 768px) {
-            .hero p {
-                font-size: 1.2rem;
-                margin: 0 auto 2rem;
-            }
-        }
-
-        .sparkle {
-            display: inline-block;
-            animation: sparkle 2s infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.2) rotate(180deg); }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .services-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .flow-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInUp 1s ease-out 0.1s both;
-        }
-
-        .flow-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .step {
-            background: var(--card-background);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-
-        .step-title {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .step-description {
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
             color: var(--text-color);
-            line-height: 1.8;
-            font-size: 0.95rem;
-            font-weight: 400;
         }
 
-        .hero-contact {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin: 30px 0;
+        .section {
+            background: var(--card-background);
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
         }
 
-        @media (max-width: 768px) {
-            .hero-contact {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-
-        .phone-number {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            white-space: nowrap;
-        }
-
-        .hours {
-            color: var(--text-color);
-            font-size: 0.9rem;
-        }
-
-        .section-title {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            text-align: center;
+        .section h2 {
+            font-family: 'Klee One', serif;
             font-size: 2.2rem;
-            margin-bottom: 40px;
             color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
             font-weight: 600;
-            letter-spacing: 1px;
+        }
+
+        .section h3 {
+            font-family: 'Klee One', serif;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .service-card {
-            background: var(--card-background);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
             border-radius: 15px;
-            box-shadow: var(--card-shadow);
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
@@ -301,1289 +162,411 @@
 
         .service-icon {
             font-size: 3rem;
-            margin-bottom: 15px;
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .service-icon img {
-            max-width: 200px;
-            max-height: 140px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-icon:hover img {
-            transform: scale(1.05);
-        }
-
-        .fallback-icon {
-            font-size: 3rem;
-        }
-
-        .service-name {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .service-description {
-            color: var(--text-color);
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .service-price {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .service-content h4 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin: 20px 0 10px;
-        }
-
-        .service-content ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .service-content li {
-            padding: 5px 0;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .service-content li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        @media (min-width: 768px) {
-            .services-grid {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                max-width: 1200px;
-                gap: 2rem;
-            }
-        }
-
-        .service-card {
-            background: var(--card-background);
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            max-width: 350px;
-            margin: 0.5rem;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .service-card {
-                padding: 2rem;
-                margin: 1rem;
-                width: auto;
-            }
-        }
-
-        .service-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
             margin-bottom: 1rem;
         }
 
-        @media (min-width: 768px) {
-            .service-image {
-                height: 200px;
-            }
+        .service-card h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
-        .service-icon {
-            width: 100%;
-            height: 200px;
-            margin-bottom: 15px;
+        .recommend-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .recommend-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: transform 0.6s;
-        }
-
-        .service-card:hover::before {
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .service-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .service-description {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-bottom: 15px;
-        }
-
-        .service-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .sets-section {
-            background: linear-gradient(135deg, #E8DCC0 0%, #F5F0E8 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .set-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .set-card:hover {
-            transform: scale(1.02);
-        }
-
-        .set-title {
-            font-size: 1.4rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .set-price {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-        }
-
-        .discounted-price {
-            color: #e74c3c;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .pricing-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .pricing-card {
-            background: var(--card-background);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .payment-methods {
-            background: var(--card-background);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .payment-methods h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .payment-list {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .payment-item {
-            padding: 10px 20px;
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 25px;
-            font-weight: 500;
-        }
-
-        .set-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .set-card:hover {
-            transform: scale(1.02);
-        }
-
-        .set-title {
-            font-size: 1.4rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .set-price {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-        }
-
-        .discounted-price {
-            color: #e74c3c;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .campaign-section {
-            background: linear-gradient(135deg, #F5F0E8 0%, #E8DCC0 50%, #D4C4A0 100%);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #807A66;
-        }
-
-        .campaign-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20">✨</text></svg>') repeat;
-            opacity: 0.1;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .campaign-title {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .campaign-highlight {
-            font-size: 2.5rem;
-            color: #e74c3c;
-            font-weight: bold;
-            margin: 20px 0;
-            animation: pulse 2s infinite;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .contact-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .contact-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .contact-item {
-            background: var(--card-background);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-        }
-
-        .contact-item h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .contact-detail {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-link {
-            padding: 10px 20px;
-            color: white;
-            border-radius: 25px;
-            font-weight: 500;
-        }
-
-        .facebook {
-            background: #4267B2;
-        }
-
-        .line {
-            background: #00C300;
-        }
-
-        .area-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .profile-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .profile-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        @media (max-width: 768px) {
-            .profile-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: center;
-            }
-        }
-
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--secondary-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-fallback {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            border: 5px solid var(--secondary-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .profile-info h3 {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .profile-info p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .profile-credentials {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
             border-left: 4px solid var(--primary-color);
         }
 
-        .profile-credentials h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .profile-credentials ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .profile-credentials li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .profile-credentials li:before {
+        .recommend-item::before {
             content: "✓";
-            position: absolute;
-            left: 0;
             color: var(--primary-color);
             font-weight: bold;
+            margin-right: 0.5rem;
         }
 
-        .gallery-section {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-            animation: fadeInUp 1s ease-out 0.7s both;
+        .faq-item {
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
         }
 
-        .gallery-grid {
+        .faq-question {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-color);
+        }
+
+        .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .gallery-item {
-            position: relative;
+        .contact-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            text-align: center;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
+        .contact-item h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .gallery-item-fallback {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-
-        .gallery-overlay h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-        }
-
-        .gallery-overlay p {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .contact-btn {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
+        .contact-item .contact-detail {
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
         }
 
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
         }
 
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: -1;
+        .note-link {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
         }
 
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            color: rgba(218, 165, 32, 0.6);
-            animation: floatUp 6s infinite linear;
+        .note-link:hover {
+            transform: translateY(-2px);
         }
 
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* スマホ用のスタイル調整 */
-        @media (max-width: 767px) {
-            .logo-img {
-                height: 80px;
-            }
-
-            .site-title {
-                font-size: 1.8rem;
-            }
-
-            .site-subtitle {
-                font-size: 0.8rem;
-            }
-
-            .hero {
-                padding-top: 140px;
-            }
-
-            .service-card {
-                padding: 1.2rem;
-            }
-
-            .service-image {
-                height: 160px;
-            }
-
-            .nav-link {
-                padding: 0.4rem 0.7rem;
-                font-size: 0.8rem;
-            }
+        .opening-date {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--text-color);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid var(--primary-color);
         }
 
         @media (max-width: 768px) {
-            .header {
-                height: 60px;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
             }
-            
-            .header-left {
-                width: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1001;
-                height: 60px;
+
+            nav ul {
+                gap: 1rem;
             }
-            
-            .header-right {
-                display: none;
-            }
-            
-            .logo-img {
-                height: 35px;
-            }
-            
-            .site-title {
-                font-size: 1.1rem;
-            }
-            
-            .site-subtitle {
-                font-size: 0.7rem;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 60px;
-                left: 50%;
-                transform: translateX(-50%);
-                gap: 12px;
-                padding: 8px 16px;
-                z-index: 1000;
-            }
-            
-            .nav-link {
-                font-size: 0.8rem;
-                padding: 6px 12px;
-            }
-            
+
             .hero {
-                padding: 120px 0 60px;
-                margin-top: 60px;
+                padding: 2rem 0;
             }
-            
-            .hero h2 {
-                font-size: 2.2rem;
+
+            .section {
+                padding: 2rem 1rem;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .flow-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-items {
-                grid-template-columns: 1fr;
-            }
-            
-            .payment-list {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .container {
-                padding: 25px;
-            }
-            
-            .hero {
-                padding: 140px 0 70px;
-                margin-bottom: 50px;
-            }
-            
-            .services-section, .sets-section, .flow-section, .contact-section, .profile-section, .gallery-section {
-                margin-bottom: 40px;
-                padding: 30px;
-            }
         }
 
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 20px;
-            z-index: 1000;
-            transition: all 0.3s ease;
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .fixed-logo {
-            position: fixed;
-            top: 10px;
-            left: 20px;
-            z-index: 1001;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 50px;
-            padding: 8px 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .fixed-logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            height: 50px;
-            margin-right: 8px;
-            animation: logoFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-3px) rotate(2deg); }
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .site-title {
-            font-family: 'Klee One', 'Noto Sans JP', sans-serif;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin: 0;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-        }
-
-        .site-subtitle {
-            font-family: 'Noto Sans JP', sans-serif;
-            color: var(--secondary-color);
-            font-size: 0.7rem;
-            margin: 0;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .fixed-logo {
-                padding: 10px 20px;
-                top: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: auto;
-                min-width: 200px;
-            }
-            .site-title {
-                font-size: 1.4rem;
-                letter-spacing: 0.5px;
-            }
-            .site-subtitle {
-                font-size: 0.7rem;
-            }
-            .logo-img {
-                height: 50px;
-            }
-        }
-
-        .nav-menu {
-            position: fixed;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 12px 24px;
-            border-radius: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            backdrop-filter: blur(10px);
-        }
-
-        @media (min-width: 768px) {
-            .nav-menu {
-                gap: 2.5rem;
-                padding: 1rem 2rem;
-                border-radius: 50px;
-                width: auto;
-                max-width: 90%;
-            }
-        }
-
-        .nav-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-        }
-
-        @media (min-width: 768px) {
-            .nav-link {
-                padding: 0.5rem 1rem;
-                font-size: 0.95rem;
-                letter-spacing: 1px;
-            }
-        }
-
-        .nav-link:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            margin: 1.5rem 1rem 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            width: 80%;
-            max-width: 300px;
-        }
-
-        @media (min-width: 768px) {
-            .cta-button {
-                padding: 1rem 2.5rem;
-                font-size: 1.1rem;
-                width: auto;
-                margin: 1.5rem 0 0;
-            }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            background: var(--secondary-color);
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts" id="hearts"></div>
-    
-    <header class="header">
-        <!-- Empty header for spacing -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">やさしさを届ける訪問美容</a>
+                <nav>
+                    <ul>
+                        <li><a href="#about">想い</a></li>
+                        <li><a href="#services">サービス</a></li>
+                        <li><a href="#recommend">対象者</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    
-    <div class="fixed-logo">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="CARE BEAUTY" class="logo-img">
-            <div class="logo-text">
-                <h1 class="site-title">CARE BEAUTY</h1>
-                <p class="site-subtitle">〜美と健康をお届け〜</p>
-            </div>
-        </div>
-    </div>
-    
-    <nav class="nav-menu">
-        <a href="#services" class="nav-link">サービス</a>
-        <a href="#flow" class="nav-link">フロー</a>
-        <a href="#pricing" class="nav-link">料金</a>
-        <a href="#contact" class="nav-link">お問い合わせ</a>
-    </nav>
-    <div class="container">
-        <div class="hero">
-            <div class="hero-message-container">
-                <img src="images/hero-message.png" alt="美容と健康をあなたのもとへ" class="hero-message-img">
-            </div>
-            <p>プロの技術と心のこもったサービスで、特別なひとときをお届けします。</p>
-            <div class="hero-contact">
-                <div class="phone-number">📞 090-1234-5678</div>
-                <div class="hours">営業時間: 9:00-20:00（年中無休）</div>
-            </div>
-            <a href="#contact" class="cta-button">ご予約はこちら</a>
-            </div>
-        </div>
 
-        <section id="flow" class="flow-section">
+    <main>
+        <section class="hero">
             <div class="container">
-                <h2 class="section-title">サービスの流れ</h2>
-                <div class="flow-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">お問い合わせ・相談</h3>
-                        <p class="step-description">お電話またはメールでご相談ください。ご要望やご質問をお聞かせください。お客様の状況やご希望に合わせて最適なサービスをご提案いたします。</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">体験・お試し</h3>
-                        <p class="step-description">実際のサービスを体験していただき、ご満足いただけるか確認していただきます。初回限定の特別価格でお試しいただけます。</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">施術・サービス提供</h3>
-                        <p class="step-description">プロのスタッフが丁寧に美容サービスを提供いたします。お客様の体調や気分に合わせて、最適な施術を行います。</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">報告・フォロー</h3>
-                        <p class="step-description">サービス後の状況をご報告し、継続的なサポートをいたします。次回のご予約や気になることがございましたらお気軽にご相談ください。</p>
-                    </div>
-                </div>
+                <h1>やさしさを届ける、訪問美容。</h1>
+                <p class="subtitle">3人の子どもを育てながら、美容を届ける道へ。</p>
+                <p class="description">
+                    兵庫県姫路市で、あなたのもとへ美容をお届けします。<br>
+                    2026年春、新しいサービスが始まります。
+                </p>
             </div>
         </section>
 
-        <div class="services-section">
-            <h2 class="section-title"><span class="sparkle">✨</span>訪問美容メニュー<span class="sparkle">✨</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/head-massage.png" alt="ヘッドマッサージ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">💆‍♀️</div>
-                    </div>
-                    <h3 class="service-name">ヘッドマッサージ</h3>
-                    <p class="service-description">リラックス効果抜群</p>
-                    <div class="service-price">¥3,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/facial-care.png" alt="フェイシャルエステ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">✨</div>
-                    </div>
-                    <h3 class="service-name">フェイシャルエステ</h3>
-                    <p class="service-description">パック付き</p>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/lymphatic-drainage.png" alt="リンパドレナージュ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">👋</div>
-                    </div>
-                    <h3 class="service-name">リンパドレナージュ</h3>
-                    <p class="service-description">肩～指先・太もも～足先</p>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/hand-nail.png" alt="ハンドネイル" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">💅</div>
-                    </div>
-                    <h3 class="service-name">ハンドネイル</h3>
-                    <p class="service-description">爪切り＋ハンドケア付き</p>
-                    <div class="service-price">¥5,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/foot-nail.png" alt="フットネイル" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">👣</div>
-                    </div>
-                    <h3 class="service-name">フットネイル</h3>
-                    <p class="service-description">爪切り＋フットバス＋フットケア付き<br><small>※巻き爪ケアは +¥1,000</small></p>
-                    <div class="service-price">¥7,000</div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="images/illustrations/full-makeup.png" alt="フルメイク" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-                        <div class="fallback-icon" style="display: none;">💄</div>
-                    </div>
-                    <h3 class="service-name">フルメイク</h3>
-                    <p class="service-description">記念写真付き</p>
-                    <div class="service-price">¥8,000</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="sets-section">
-            <h2 class="section-title">💎お得なセットメニュー💎</h2>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋ヘッドマッサージ</div>
-                <div class="set-price">
-                    <span class="original-price">¥10,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥8,500</span>
-                </div>
-            </div>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋リンパドレナージュ</div>
-                <div class="set-price">
-                    <span class="original-price">¥14,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥12,500</span>
-                </div>
-            </div>
-            
-            <div class="set-card">
-                <div class="set-title">フェイシャルエステ＋フルメイク</div>
-                <div class="set-price">
-                    <span class="original-price">¥15,000</span>
-                    <span>→</span>
-                    <span class="discounted-price">¥13,500</span>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.2rem; color: #333;">その他、お客様のご要望に応じて</p>
-                <p style="font-size: 1.4rem; font-weight: bold; color: #e74c3c; margin-top: 10px;">
-                    <strong>"あなただけの特別セット"</strong>もご提案いたします！
+        <div class="container">
+            <section id="about" class="section fade-in">
+                <h2>私の想い</h2>
+                <p>
+                    はじめまして。私は兵庫県姫路市に住む、3人の子どもを育てるシングルマザーです。
+                    現在、訪問美容の資格取得に向けて勉強中で、2025年秋に第1段階を終了し、
+                    その後4ヶ月の通学を経て、2026年春にサービスを開始する予定です。
                 </p>
-            </div>
-        </div>
+                <p>
+                    なぜ訪問美容の道を選んだのか――それは、自分自身がシングルマザーだからこそ、
+                    同じ境遇の人や、外出が困難な方々の気持ちがよく分かるからです。
+                    「美容院に行きたいけれど、時間がない」「体調が優れず、外出が難しい」
+                    「子どもが小さくて、なかなか自分の時間が取れない」
+                </p>
+                <p>
+                    そんな想いを抱えている方々に、私は美容を通じて寄り添いたいのです。
+                    美容は単なる外見を整えるためだけのものではありません。
+                    心も一緒に整えてくれる、大切な時間だと私は考えています。
+                </p>
+                <p>
+                    私自身、子育てと仕事の両立で忙しい日々を送りながらも、
+                    「誰かの役に立ちたい」「同じ境遇の人の味方になりたい」という強い想いを持っています。
+                    その想いが、私を訪問美容の道へと導いてくれました。
+                </p>
+                <p>
+                    美容を通じて、皆さまに「ほっと一息つける時間」「自分を大切にする時間」を
+                    お届けできるよう、日々学びを重ねています。
+                    あなたの「整う時間」を、心を込めてサポートさせていただきます。
+                </p>
+            </section>
 
-
-
-        <div class="contact-section">
-            <h2 class="section-title">📞お問い合わせ</h2>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <h3>📞 電話でのお問い合わせ</h3>
-                    <div class="contact-detail">090-1234-5678</div>
-                    <p>営業時間: 9:00-20:00（年中無休）<br>お気軽にお電話ください</p>
+            <section class="section fade-in">
+                <h2>現在の状況</h2>
+                <div class="opening-date">
+                    サービス開始予定：2026年春頃
                 </div>
-                <div class="contact-item">
-                    <h3>📧 メールでのお問い合わせ</h3>
-                    <div class="contact-detail">info@kaigobiyou.net</div>
-                    <p>24時間受付<br>2営業日以内にご返信いたします</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📱 SNSでのお問い合わせ</h3>
-                    <p style="margin-bottom: 15px;">Facebook / LINE でもお気軽にご連絡ください</p>
-                    <div class="social-links">
-                        <span class="social-link facebook">Facebook</span>
-                        <span class="social-link line">LINE</span>
+                <p>
+                    現在、私は訪問美容の資格取得に向けて勉強中です。
+                    2025年秋に第1段階の学習を終了し、その後4ヶ月間の通学を経て、
+                    2026年春頃にサービスを開始する予定です。
+                </p>
+                <p>
+                    まだサービス開始前ではありますが、学びの過程や準備の様子、
+                    そして訪問美容への想いなどを、noteで発信しています。
+                    現在の取り組みや今後の予定について、ぜひご覧ください。
+                </p>
+                <p>
+                    資格取得までの道のりは決して楽なものではありませんが、
+                    「皆さまに喜んでいただけるサービスを提供したい」という想いを胸に、
+                    一歩一歩、着実に前進しています。
+                </p>
+                <p>
+                    サービス開始まで、もう少しお待ちください。
+                    その間にもご質問やご相談がございましたら、お気軽にお声かけください。
+                </p>
+                <a href="#" class="note-link">学びと準備の記録（note）</a>
+            </section>
+
+            <section id="services" class="section fade-in">
+                <h2>提供予定のサービス</h2>
+                <p>
+                    2026年春のサービス開始に向けて、以下のメニューをご用意する予定です。
+                    すべてのサービスは、お客様のご自宅やご指定の場所でご利用いただけます。
+                </p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💆‍♀️</div>
+                        <h4>ヘッドスパ</h4>
+                        <p>頭皮をやさしくマッサージし、日々の疲れを癒します。リラクゼーション効果で心も軽やかに。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h4>フェイシャル</h4>
+                        <p>お肌の状態に合わせたケアで、自然な美しさを引き出します。特別な時間をお過ごしください。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💅</div>
+                        <h4>ネイル</h4>
+                        <p>手足の爪を美しく整えます。清潔感のある仕上がりで、気分も明るくなります。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤲</div>
+                        <h4>リンパケア</h4>
+                        <p>やさしいタッチでリンパの流れを促進し、むくみの改善やリラックス効果をもたらします。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💄</div>
+                        <h4>メイク</h4>
+                        <p>特別な日のためのメイクアップ。お客様の魅力を最大限に引き出します。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌸</div>
+                        <h4>トータルケア</h4>
+                        <p>複数のサービスを組み合わせて、お客様だけの特別なひとときをお作りします。</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="profile-section">
-            <h2 class="section-title">👩‍⚕️スタッフ紹介</h2>
-            <div class="profile-content">
-                <div class="profile-image-container">
-                    <img src="images/profile/owner-profile.jpg" alt="オーナープロフィール" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="profile-fallback" style="display: none;">👩‍⚕️</div>
-                </div>
-                <div class="profile-info">
-                    <h3>オーナー</h3>
-                    <p>美容業界で10年以上の経験を持つプロフェッショナルです。お客様一人ひとりの美と健康をサポートすることを心がけています。</p>
-                    <p>「美しさは外見だけでなく、心の健康からも生まれる」という信念のもと、リラックスできる空間での施術を提供しています。</p>
-                    <div class="profile-credentials">
-                        <h4>📋 保有資格・経験</h4>
-                        <ul>
-                            <li>美容師免許</li>
-                            <li>ネイリスト技能検定1級</li>
-                            <li>アロマテラピー検定1級</li>
-                            <li>リンパドレナージュ認定セラピスト</li>
-                            <li>訪問美容サービス 5年の実績</li>
-                        </ul>
+            <section id="recommend" class="section fade-in">
+                <h2>こんな方におすすめ</h2>
+                <p>
+                    以下のような方に、ぜひ私のサービスをご利用いただきたいと思っています。
+                    どなたでも、「これは私のためのサービスだ」と感じていただけるよう、
+                    心を込めてサポートいたします。
+                </p>
+                <div class="recommend-list">
+                    <div class="recommend-item">
+                        外出が難しい方（体調不良、移動困難など）
+                    </div>
+                    <div class="recommend-item">
+                        育児中で自分の時間が取れないママ
+                    </div>
+                    <div class="recommend-item">
+                        妊娠中で美容院に行くのが大変な方
+                    </div>
+                    <div class="recommend-item">
+                        高齢で外出が困難な方
+                    </div>
+                    <div class="recommend-item">
+                        介護をされている方（介護者・被介護者共に）
+                    </div>
+                    <div class="recommend-item">
+                        おしゃれをあきらめている方
+                    </div>
+                    <div class="recommend-item">
+                        人混みが苦手な方
+                    </div>
+                    <div class="recommend-item">
+                        自分だけの特別な時間を過ごしたい方
+                    </div>
+                    <div class="recommend-item">
+                        「整えてもらう」体験を通じて心も整えたい方
+                    </div>
+                    <div class="recommend-item">
+                        同じ境遇の人に理解してもらいたい方
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="gallery-section">
-            <h2 class="section-title">📸施術ギャラリー</h2>
-            <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">
-                これまでの施術例をご紹介します。お客様の同意を得て掲載しています。
+            <section id="faq" class="section fade-in">
+                <h2>よくあるご質問</h2>
+                <div class="faq-item">
+                    <p class="faq-question">Q. 訪問エリアはどちらですか？</p>
+                    <p class="faq-answer">A. 兵庫県姫路市とその近郊エリアへお伺いします。詳しいエリアについては、お問い合わせ時にご確認ください。遠方の場合は、交通費を別途ご相談させていただく場合があります。</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. 自宅で準備するものはありますか？</p>
+                    <p class="faq-answer">A. 基本的な道具や材料はすべて私が持参いたします。お客様には、手を洗える場所とタオル1〜2枚をご用意いただければ十分です。サービス内容によって必要なものがある場合は、事前にお伝えします。</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. 自宅の環境はどのくらいのスペースが必要ですか？</p>
+                    <p class="faq-answer">A. 畳1〜2畳程度のスペースがあれば十分です。お客様が快適に過ごせる場所であれば、リビングでも寝室でも、どちらでも構いません。事前にご相談いただければ、最適な環境をご提案いたします。</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. 料金はどのくらいですか？</p>
+                    <p class="faq-answer">A. サービス内容により異なります。詳しい料金体系については、サービス開始が近づきましたら公開予定です。お客様の状況に応じて、可能な限り柔軟に対応させていただきます。</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. 子どもがいても大丈夫ですか？</p>
+                    <p class="faq-answer">A. もちろん大丈夫です。私自身も3人の子どもを育てているので、お子様がいらっしゃる環境は十分理解しています。お子様が近くにいても、安心してサービスをお受けいただけます。</p>
+                </div>
+            </section>
+
+            <section id="contact" class="section fade-in">
+                <h2>ご予約・お問い合わせ</h2>
+                <p>
+                    サービス開始までは準備中ですが、ご質問やご相談がございましたら、
+                    お気軽にご連絡ください。どんな小さなことでも構いません。
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📞 LINE</h4>
+                        <p class="contact-detail">@yasashisa-biyo</p>
+                        <p>24時間受付<br>お気軽にメッセージください</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📧 メール</h4>
+                        <p class="contact-detail">info@yasashisa-biyo.com</p>
+                        <p>24時間受付<br>2営業日以内にご返信いたします</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: var(--text-light);">
+                    「美容を通じて、あなたの日常に小さな幸せを」<br>
+                    そんな想いで、皆さまのお声をお待ちしています。
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>あなたの"整う時間"を届けられる日を楽しみにしています。</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                © 2025 やさしさを届ける訪問美容 | 姫路市の介護美容サービス
             </p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/gallery/nail-work-1.jpg" alt="ネイル施術例1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">💅</div>
-                    <div class="gallery-overlay">
-                        <h4>ハンドネイル</h4>
-                        <p>爪の形を整えて、上品な仕上がりに</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/nail-work-2.jpg" alt="ネイル施術例2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">👣</div>
-                    <div class="gallery-overlay">
-                        <h4>フットネイル</h4>
-                        <p>フットバス付きの丁寧なケア</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/facial-work-1.jpg" alt="フェイシャル施術例1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">✨</div>
-                    <div class="gallery-overlay">
-                        <h4>フェイシャルエステ</h4>
-                        <p>パック付きで美肌効果抜群</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/head-massage-1.jpg" alt="ヘッドマッサージ施術例1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">💆‍♀️</div>
-                    <div class="gallery-overlay">
-                        <h4>ヘッドマッサージ</h4>
-                        <p>リラックス効果で心も軽やか</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/makeup-work-1.jpg" alt="メイク施術例1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">💄</div>
-                    <div class="gallery-overlay">
-                        <h4>フルメイク</h4>
-                        <p>特別な日のための華やかな仕上がり</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/gallery/hand-care-1.jpg" alt="ハンドケア施術例1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                    <div class="gallery-item-fallback" style="display: none;">🤲</div>
-                    <div class="gallery-overlay">
-                        <h4>ハンドケア</h4>
-                        <p>手肌を美しく、しっとりと</p>
-                    </div>
-                </div>
-            </div>
         </div>
-
-        <div class="area-section">
-            <h2 class="section-title">🏠訪問対応エリア</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 15px;">
-                姫路市内・近郊エリアに出張いたします。
-            </p>
-            <p style="font-size: 1rem; color: #666;">
-                遠方の方はご相談ください。（交通費別途）
-            </p>
-            <button class="contact-btn" onclick="alert('お問い合わせありがとうございます！\nこちらは実際のサイトではありませんが、\n素敵なデザインができましたね✨')">
-                お問い合わせ・ご予約
-            </button>
-        </div>
-    </div>
+    </footer>
 
     <script>
-        // ハートのアニメーション
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '💖';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
-            
-            document.getElementById('hearts').appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
+        // フェードインアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // ハートを定期的に生成
-        setInterval(createHeart, 2000);
-
-        // スクロール時のアニメーション
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
+                    entry.target.classList.add('visible');
                 }
             });
+        }, observerOptions);
+
+        // 全てのfade-in要素を監視
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
 
-        document.querySelectorAll('.services-section, .sets-section, .profile-section, .gallery-section, .area-section')
-            .forEach(el => observer.observe(el));
-
-        // スクロール時のヘッダーエフェクト
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 25px rgba(0,0,0,0.15)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            }
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
